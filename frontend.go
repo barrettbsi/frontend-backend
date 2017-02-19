@@ -3,9 +3,9 @@ package febe
 import (
 	"fmt"
 	"log"
-	"net/http"
 	"os"
 
+	"github.com/barrettbsi/frontend-backend/controllers"
 	"github.com/gin-gonic/gin"
 )
 
@@ -16,9 +16,7 @@ func StartFrontend() {
 
 	r.LoadHTMLGlob("templates/frontend/*")
 
-	r.GET("/", func(c *gin.Context) {
-		c.HTML(http.StatusOK, "index.html", nil)
-	})
+	r.GET("/", controllers.FrontendHome)
 
 	r.Run(fmt.Sprintf(":%v", os.Getenv("PORT")))
 }
@@ -30,9 +28,7 @@ func StartBackend() {
 
 	r.LoadHTMLGlob("templates/backend/*")
 
-	r.GET("/", func(c *gin.Context) {
-		c.HTML(http.StatusOK, "index.html", nil)
-	})
+	r.GET("/", controllers.BackendHome)
 
 	r.Run(fmt.Sprintf(":%v", os.Getenv("PORT")))
 }
