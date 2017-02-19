@@ -1,5 +1,5 @@
 #!/bin/bash
-cp Procfile.backend Procfile
+cp Procfile.frontend Procfile
 git add -A
 rm Procfile
 git commit -m "$1"
