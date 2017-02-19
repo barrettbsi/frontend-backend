@@ -1,1 +1,1 @@
-web: bbsi-frontend
+web: bbsi-backend
