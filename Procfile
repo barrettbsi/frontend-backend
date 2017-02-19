@@ -1,1 +1,1 @@
-web: cmd/bbsi-backend
+web: bbsi-backend
